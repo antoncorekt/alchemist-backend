@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/alchemist-backend.iml" filepath="$PROJECT_DIR$/.idea/alchemist-backend.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmb-alchemist-core/gmb-alchemist-core.iml" filepath="$PROJECT_DIR$/gmb-alchemist-core/gmb-alchemist-core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmb-alchemist-rest/gmb-alchemist-rest.iml" filepath="$PROJECT_DIR$/gmb-alchemist-rest/gmb-alchemist-rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gmb-infrastructure/gmb-infrastructure.iml" filepath="$PROJECT_DIR$/gmb-infrastructure/gmb-infrastructure.iml" />
+    </modules>
+  </component>
+</project>

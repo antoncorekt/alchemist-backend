@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="gmb-infrastructure" />
+        <module name="gmb-alchemist-core" />
+        <module name="gmb-alchemist-rest" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="13">
+      <module name="alchemist-backend" target="1.5" />
+      <module name="gmb-alchemist-core" target="13" />
+      <module name="gmb-alchemist-rest" target="13" />
+      <module name="gmb-infrastructure" target="1.5" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
