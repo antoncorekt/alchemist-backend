@@ -1,9 +1,14 @@
 package dev.ako.gmb.alchemist.rest.controllers;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import dev.ako.gmb.alchemist.core.dao.documents.Account;
+import dev.ako.gmb.alchemist.core.dao.repositories.AccountCrudRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.RequestEntity;
+import org.springframework.web.bind.annotation.*;
+import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
+
+import java.util.UUID;
 
 /**
  * @author Anton Kozlovskyi
@@ -13,9 +18,38 @@ import reactor.core.publisher.Mono;
 @RequestMapping("/user")
 public class UserController {
 
-    @GetMapping("/helloWorld")
+    @Autowired
+    private AccountCrudRepository accountCrudRepository;
+
+    @GetMapping(path = "/helloWorld")
     public Mono<String> helloWorld(){
         return Mono.just("Hello world");
+    }
+
+
+    @PostMapping(path = "/account", consumes = "application/json", produces = "application/json")
+    public @ResponseBody Mono<Account> test(@RequestBody Account account){
+
+//        final Account account = body.getBody();
+
+        account.setId(UUID.randomUUID().toString());
+        accountCrudRepository.save(account);
+
+        return Mono.just(account);
+    }
+
+    @GetMapping(path = "/account/{uuid}", consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    public Mono<Account> getAccounts(@PathVariable String uuid){
+
+        return accountCrudRepository.findById(uuid);
+    }
+
+    @GetMapping(path = "/account", consumes = "application/json", produces = "application/json")
+    @ResponseBody
+    public Flux<Account> getAll(){
+
+        return accountCrudRepository.findAll();
     }
 
 }

@@ -11,7 +11,6 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
  * @author Anton Kozlovskyi
  * @date 17 Jan 2020
  */
-@Configuration
 @EnableReactiveMongoRepositories
 public class MongoReactiveAppConfig extends AbstractReactiveMongoConfiguration {
 
