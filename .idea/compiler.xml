@@ -15,7 +15,7 @@
       <module name="alchemist-backend" target="1.5" />
       <module name="gmb-alchemist-core" target="13" />
       <module name="gmb-alchemist-rest" target="13" />
-      <module name="gmb-infrastructure" target="1.5" />
+      <module name="gmb-infrastructure" target="13" />
     </bytecodeTargetLevel>
   </component>
 </project>
