@@ -59,6 +59,8 @@
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-databind:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: com.fasterxml.jackson.core:jackson-core:2.10.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.hateoas:spring-hateoas:1.0.3.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: io.springfox:springfox-bean-validators:2.9.2" level="project" />
+    <orderEntry type="library" name="Maven: com.google.guava:guava:20.0" level="project" />
     <orderEntry type="library" name="Maven: io.springfox:springfox-swagger-ui:2.9.2" level="project" />
     <orderEntry type="module" module-name="gmb-alchemist-core" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-data-mongodb-reactive:2.2.3.RELEASE" level="project" />
