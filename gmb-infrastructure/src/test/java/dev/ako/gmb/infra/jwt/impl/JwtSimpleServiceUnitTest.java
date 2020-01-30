@@ -7,7 +7,9 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.junit.jupiter.api.Test;
+import org.springframework.util.ReflectionUtils;
 
+import java.lang.reflect.Field;
 import java.util.Map;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -29,21 +31,18 @@ class JwtSimpleServiceUnitTest {
     }
 
     @Test
-    void createJWT() {
-
-        JwtSimpleService jwtSimpleService = new JwtSimpleService();
+    void createJWT() throws NoSuchFieldException {
+        JwtSimpleService jwtSimpleService = new JwtSimpleService("secret_key");
 
         String jwtToken = jwtSimpleService.createJWT(TestData.builder()
                 .name("test_name")
                 .age(5)
                 .build());
 
-        System.out.println(jwtToken);
-
         DecodedJWT decodedJWT = jwtSimpleService.decodeToken(jwtToken);
 
-        System.out.println(decodedJWT.getClaim("name").asString());
-        System.out.println(decodedJWT.getClaim("age").asString());
+        assertEquals("test_name", decodedJWT.getClaim("name").asString());
+        assertEquals("5", decodedJWT.getClaim("age").asString());
     }
 
     @Test
